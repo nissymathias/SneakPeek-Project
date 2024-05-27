@@ -1,0 +1,84 @@
+    /* Style the form */
+  #login-form {
+    margin: 130px auto;
+    max-width: 30rem;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  #registration-form , #userupdate-form{
+    margin: 20px auto;
+    max-width: 30rem;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Style form inputs and labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  input[type="tel"],
+  select{
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  input[type="submit"] {
+    background-color: var(--button-hover);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: var(--salmon-pink);
+  }
+
+  p{
+    margin-top: 20px;
+  }
+  a{
+    display: inline-block;
+    color: var(--salmon-pink);
+  }
+
+  #update-button{
+    background-color: var(--button-hover);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  #update-button:hover{
+    background-color: var(--salmon-pink);
+  }
+  
+  /* Style error messages */
+  .error {
+    color: var(--error);
+    margin-bottom: 10px;
+  }
+

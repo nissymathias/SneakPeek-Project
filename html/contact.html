@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="us">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Sneak Peek</title>
+
+	<!-- Google Font Links -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet" />
+
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/product.css">
+	<link rel="stylesheet" href="../lib/jquery-ui.css">
+	<link rel="stylesheet" href="../lib/jquery-ui.min.css">
+	<link rel="stylesheet" href="../lib/jquery-ui.theme.css">
+	<link rel="stylesheet" href="../css/contact.css">
+
+	<!-- <script src="/path/to/cdn/jquery.slim.min.js"></script> -->
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="../lib/jquery-ui.js"></script>
+	<!--For Fav icon-->
+	<link rel="icon" type="image/png" href="../img/logo-png.png">
+
+	<script>
+		$(function () {
+			$("#accordion").accordion();
+		});
+
+		$(function () {
+			$("#tabs").tabs();
+		});
+
+	</script>
+	<script>
+		function submitForm() {
+			// Validate the form before submitting
+			var name = $("#name").val();
+			var email = $("#email").val();
+			var message = $("#message").val();
+
+			// Check if name, email, and message are not empty
+			if (name.trim() !== '' && email.trim() !== '' && message.trim() !== '') {
+				// All fields are filled, show success message
+				alert("Message sent successfully!");
+				// Clear the form fields
+				$("#name").val('');
+				$("#email").val('');
+				$("#message").val('');
+			} else {
+				// If any field is empty, show error message
+				alert("Please fill out all fields.");
+			}
+			// Prevent default form submission behavior
+			return false;
+		}
+	</script>
+	<script>
+		$(function () {
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});
+	</script>
+	<style>
+		* {
+			--ang: 0;
+		}
+
+		.spinner {
+			transform-style: preserve-3d;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform: rotateY(calc(var(--ang) * 1deg)) translateY(-12px);
+			transition: all 0.5s ease-in-out;
+		}
+
+		.rotator {
+			width: 600px;
+			height: 200px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			perspective: 700px;
+			perspective-origin: center;
+			position: absolute;
+			margin-top: 280px;
+			top: 140px;
+			left: 50%;
+			/* Center horizontally by 50% of the viewport width */
+			transform: translate(-50%, -50%) translateY(50px);
+			/* Adjust to center it properly and move it down */
+
+		}
+
+		.panel {
+			border-radius: 5px;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			background-size: cover;
+			background-position: 100% 100%;
+		}
+
+		.panel:nth-child(1) {
+			transform: rotateY(0deg) translateZ(400px);
+		}
+
+		.panel:nth-child(2) {
+			transform: rotateY(60deg) translateZ(400px);
+		}
+
+		.panel:nth-child(3) {
+			transform: rotateY(120deg) translateZ(400px);
+		}
+
+		.panel:nth-child(4) {
+			transform: rotateY(180deg) translateZ(400px);
+		}
+
+		.panel:nth-child(5) {
+			transform: rotateY(240deg) translateZ(400px);
+		}
+
+		.panel:nth-child(6) {
+			transform: rotateY(300deg) translateZ(400px);
+		}
+
+		.pagination {
+			position: absolute;
+			top: 60%;
+			left: 50%;
+			transform: translate(-50%, 50%);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 200px;
+			/* Adjust the width as needed */
+		}
+
+		.pagination button {
+			padding: 0;
+			border: none;
+			cursor: pointer;
+			width: 44px;
+			color: black;
+			background: #fffa;
+			height: 44px;
+			font-family: "Roboto", sans-serif;
+			font-size: 20px;
+			border-radius: 100%;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.pagination button:hover {
+			background: #fffc;
+		}
+
+		.pagination button:active {
+			background: #ffff;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotateY(0deg);
+			}
+
+			100% {
+				transform: rotateY(360deg);
+			}
+		}
+
+		.fade {
+			background: #0006;
+			background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0) 100%);
+			width: 860px;
+			height: 200px;
+			position: absolute;
+			transform: rotateY(calc(var(--ang) * -1deg)) translateZ(110px);
+			transition: all 0.5s ease-in-out;
+		}
+
+		.a {
+			background-image: url(../img/a1.jpg);
+		}
+
+		.b {
+			background-image: url(../img/c1.jpg);
+		}
+
+		.c {
+			background-image: url(../img/c3.jpg);
+		}
+
+		.d {
+			background-image: url(../img/s1.jpg);
+		}
+
+		.e {
+			background-image: url(../img/n1.jpg);
+		}
+
+		.f {
+			background-image: url(../img/s3.jpg);
+		}
+
+
+		.bodyPart {
+			height: 100%;
+			margin: 15px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: left;
+		}
+
+		.body-title {
+			margin-top: 2em;
+			font-size: 2em;
+			/* Adjust the font size as needed */
+			color: #333;
+			/* Set the desired text color */
+			text-transform: uppercase;
+			/* Convert the text to uppercase */
+			letter-spacing: 1px;
+			/* Add some letter spacing for emphasis */
+			border-bottom: 2px solid #333;
+			/* Add a border at the bottom for decoration */
+			padding-bottom: 10px;
+			/* Adjust the padding at the bottom as needed */
+			text-align: center;
+		}
+
+		.body-title1 {
+			margin-top: 16em;
+			font-size: 2em;
+			/* Adjust the font size as needed */
+			color: #333;
+			/* Set the desired text color */
+			text-transform: uppercase;
+			/* Convert the text to uppercase */
+			letter-spacing: 1px;
+			/* Add some letter spacing for emphasis */
+			border-bottom: 2px solid #333;
+			/* Add a border at the bottom for decoration */
+			padding-bottom: 10px;
+			/* Adjust the padding at the bottom as needed */
+			text-align: center;
+		}
+
+		h2:hover {
+			color: salmon;
+		}
+
+		#accordion {
+			border-radius: 5px;
+			padding: 20px;
+		}
+
+		#tabs {
+			border-radius: 5px;
+			padding: 20px;
+		}
+
+		.ull {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+			border-radius: 5px 5px 0 0;
+			text-align: center;
+		}
+
+		.lii {
+			width: 25%;
+			float: left;
+		}
+
+		.lii a {
+			display: block;
+			color: #333;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		.lii a:hover {
+			background-color: #ddd;
+		}
+
+		/* Styling for images */
+		img {
+			max-width: 100%;
+			border-radius: 10px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="header"></div>
+	<script>
+		$(document).ready(function () {
+			var ang = 0;
+
+			$("#prev").click(function () {
+				ang = ang + 22.5;
+				$(".spinner").css("--ang", ang);
+			});
+
+			$("#next").click(function () {
+				ang = ang - 22.5;
+				$(".spinner").css("--ang", ang);
+			});
+		}); 
+	</script>
+
+
+
+	<div class="bodyPart">
+		<div class="rotator">
+			<div class="spinner">
+				<div class="panel a"></div>
+				<div class="panel b"></div>
+				<div class="panel c"></div>
+				<div class="panel d"></div>
+				<div class="panel e"></div>
+				<div class="panel f"></div>
+				<div class="fade"></div>
+			</div>
+		</div>
+
+		<div class="pagination">
+			<button type="button" id="prev">&#8592;</button>
+			<button type="button" id="next">&#8594;</button>
+		</div>
+
+		<!-- Accordion -->
+		<h2 class="body-title1">MOST ASKED QUESTIONS</h2>
+		<div id="accordion">
+			<h3>What is Online Sneakers Hunt?</h3>
+			<div>
+				<p>
+					Online Sneakers Hunt is an online platform dedicated to helping sneaker enthusiasts find their
+					favorite
+					sneakers. We provide comprehensive information about various sneaker brands, models, releases, and
+					where
+					to purchase them.
+				</p>
+			</div>
+
+			<h3>How does Online Sneakers Hunt work?</h3>
+			<div>
+				<p>
+					Our platform offers a user-friendly interface where you can search for sneakers based on brand,
+					model,
+					size, and other preferences. We aggregate information from multiple retailers and provide links to
+					where
+					you can purchase the sneakers online.
+				</p>
+			</div>
+
+			<h3>Can I trust the information provided by Online Sneakers Hunt?</h3>
+			<div>
+				<p>
+					Yes, we strive to provide accurate and up-to-date information about sneakers and their availability.
+					However, please note that prices, availability, and other details may vary and are subject to change
+					by
+					retailers.
+				</p>
+			</div>
+
+			<h3>Do you sell sneakers directly on Online Sneakers Hunt?</h3>
+			<div>
+				<p>
+					No, we do not sell sneakers directly on our platform. We provide links to reputable retailers where
+					you
+					can make your purchases securely.
+				</p>
+			</div>
+
+			<h3>How can I contact Online Sneakers Hunt for further assistance?</h3>
+			<div>
+				<p>
+					If you have any questions, feedback, or concerns, please feel free to contact us through our contact
+					form or via email at support@onlinesneakershunt.com. We'll be happy to assist you!
+				</p>
+			</div>
+		</div>
+
+		<!-- Tabs -->
+		<h2 class="body-title">FEATURES AND PRICINGS</h2>
+
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Features</a></li>
+				<li><a href="#tabs-2">Pricing</a></li>
+				<li><a href="#tabs-3">Testimonials</a></li>
+			</ul>
+			<div id="tabs-1">
+				<h3>Know what we offer as the features:</h3><br>
+				<ul class="ull">
+					<li class="lii">
+						<img src="../img/adidas.jpg" alt="Feature 1" width="100" height="100"><br>
+						Advanced search functionality
+					</li>
+
+					<li class="lii">
+						<img src="../img/nike.jpg" alt="Feature 2" width="100" height="100"><br>
+						Comprehensive sneaker information
+					</li>
+					<li class="lii">
+						<img src="../img/sneakers.jpg" alt="Feature 3" width="100" height="100"><br>
+						Links to reputable retailers
+					</li>
+					<li class="lii">
+						<img src="../img/s3.jpg" alt="Feature 4" width="100" height="100"><br>
+						User-friendly interface
+					</li>
+				</ul>
+				</p>
+			</div>
+			<div id="tabs-2">
+				<h3>Our pricing plans are designed to suit your needs:</h3> <br>
+				<ul class="ull">
+					<li class="lii">
+						<img src="../img/sneakers.jpg" alt="Basic Plan" width="100" height="100"><br>
+						Basic: Free
+					</li>
+					<li class="lii">
+						<img src="../img/a4.jpg" alt="Pro Plan" width="100" height="100"><br>
+						Pro: $9.99/month
+					</li>
+					<li class="lii">
+						<img src="../img/s2.jpg" alt="Premium Plan" width="100" height="100"><br>
+						Premium: $19.99/month
+					</li>
+				</ul>
+				</p>
+			</div>
+			<div id="tabs-3">
+				<h3>See what our users have to say about Online Sneakers Hunt:</h3>
+				<div class="testimonial">
+					<img src="../img/logo-png.png" alt="John" width="50" height="50">
+					"I found the sneakers I was looking for easily!" - John
+				</div>
+				<div class="testimonial">
+					<img src="../img/logo-png.png" alt="Emily" width="50" height="50">
+					"Great platform, highly recommended!" - Emily
+				</div>
+				<div class="testimonial">
+					<img src="../img/logo-png.png" alt="Michael" width="50" height="50">
+					"Awesome experience, will use it again!" - Michael
+				</div>
+				</p>
+			</div>
+		</div>
+		<!-- Contact Details -->
+
+		<h2 class="body-title">CONTACT US</h2>
+		<div class="contact-container">
+			<div class="content">
+				<div class="left-side">
+					<div class="address details">
+						<ion-icon name="location-outline" style="margin-left: 50px;"></ion-icon>
+						<div class="topic">Address</div>
+						<div class="text-one">123 NorthYorkland</div>
+						<div class="text-two">Toronto, Canada</div>
+					</div>
+					<div class="phone details">
+						<ion-icon name="call-outline" style="margin-left: 50px;"></ion-icon>
+						<div class="topic">Phone</div>
+						<div class="text-one">+(437) 000-1234</div>
+						<div class="text-two">+(647)563-6532</div>
+					</div>
+					<div class="email details">
+						<ion-icon name="mail-open-outline" style="margin-left: 80px;"></ion-icon>
+						<div class="topic">Email</div>
+						<div class="text-one">sneakpeaks@gmail.com</div>
+						<div class="text-two">Lambton@Gmail.Com</div>
+					</div>
+				</div>
+				<div class="right-side">
+					<div class="topic-text">Send us a message</div>
+					<form action="#">
+						<div class="input-box">
+							<input type="text" placeholder="Enter your name" required>
+						</div>
+						<div class="input-box">
+							<input type="text" placeholder="Enter your email" required>
+						</div>
+						<div class="input-box message-box">
+							<input type="textarea" placeholder="Enter your message" required>
+
+						</div>
+						<div class="button">
+							<input type="button" value="Send Now">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div id="footer"></div>
+
+</body>
+
+</html>

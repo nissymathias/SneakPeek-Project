@@ -1,0 +1,348 @@
+/* Styling for main headings */
+h1 {
+    color: var(--salmon-pink); /* Set text color for h1 */
+    margin: 20px; /* Add margin around h1 */
+  }
+  
+  /* Styling for hover state of h1 */
+  h1:hover {
+    color: indianred; /* Change text color to salmon pink on hover */
+  }
+  .about-headers{
+    margin-top: 2em;
+    font-size: 2em;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Styling for the title of each category */
+  h2 {
+    /* text-align: center; */
+    font-size: 20px; /* Set font size for h2 */
+    color: var(
+      --category-title-color
+    ); /* Set text color from custom properties */
+    margin: 20px; /* Add margin around h2 */
+  }
+  
+  /* Styling for the hover state of the title of each category */
+  h2:hover {
+    color: var(--salmon-pink); /* Change text color to salmon pink on hover */
+  }
+  
+  /* Styling for header section */
+  header {
+    height: auto;
+  }
+  
+  /* Styling for the logo */
+  #header img {
+    max-height: 80px; /* Set maximum height for the logo */
+    /* Adjust this value as needed */
+  }
+  
+  /* Styling for home section */
+  #home {
+    width: 100%;
+    padding: 3rem; /* Add padding around home section */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  /* Styling for left part of home section */
+  .home-left {
+    height: 300px; /* Set height of home left section */
+    position: relative; /* Set position relative for absolute positioning of elements */
+  }
+  
+  /* Styling for images in home section */
+  .home-left img {
+    height: 100%; /* Set height of images */
+    border-radius: 10px; /* Add border radius to images */
+  }
+  
+  /* Styling for right part of home section */
+  .home-right {
+    width: 50%; /* Set width of home right section */
+  }
+  
+  .about-head {
+    color: #fff; /* Set text color for about header */
+    padding: 1rem 3rem; /* Add padding to about header */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    height: 100%; /* Set the height of the header */
+    position: relative; /* Add position relative to contain absolute positioned elements */
+  }
+  
+  /* Styling for the logo */
+  .about-head img {
+    max-height: 80px; /* Set maximum height for the logo */
+    /* Adjust this value as needed */
+  }
+  
+  /* Background styling for .about-head */
+  .about-head::before {
+    /* Content property to insert generated content before the specified element */
+    content: " ";
+    /* Positioning the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Full width and height of the parent element */
+    width: 100%;
+    height: 100%;
+    /* Background image */
+    background-image: url(../img/img17.jpg);
+    /* Positioning of the background image */
+    background-position: bottom;
+    /* Scaling of the background image to cover the entire element */
+    background-size: cover;
+    /* Opacity of the background overlay */
+    opacity: 0.8;
+    /* Stack order of the pseudo-element */
+    z-index: -1;
+  }
+  
+  /* Overlay for .about-head background */
+  .about-head::after {
+    /* Content property to insert generated content after the specified element */
+    content: " ";
+    /* Positioning the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Full width and height of the parent element */
+    width: 100%;
+    height: 100%;
+    /* Stack order of the pseudo-element */
+    z-index: -1;
+    /* Opacity of the overlay */
+    opacity: 0.6;
+    /* Scaling of the background image to cover the entire element */
+    background-size: cover;
+    /* Background color of the overlay */
+    background-color: black;
+    /* Positioning of the background image */
+    background-position: bottom;
+  }
+  
+  /* Styling for home heading */
+  .home-heading {
+    font-size: 2rem; /* Set font size for home heading */
+    margin-bottom: 10px; /* Add margin below home heading */
+  }
+  
+  /* Styling for home paragraph */
+  .home-para {
+    margin-bottom: 20px; /* Add margin below home paragraph */
+    line-height: 1.5; /* Set line height for home paragraph */
+  }
+  
+  /* Styling for workflow section */
+  #workFlow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  /* Styling for headings in workflow section */
+  .heading {
+    margin: 1rem auto; /* Add margin to headings */
+    text-align: center; /* Align text to center */
+  }
+  
+  /* Styling for paragraphs in workflow section */
+  .para {
+    margin: 1rem auto; /* Add margin to paragraphs */
+  }
+  
+  /* Styling for number container */
+  .num-container {
+    width: 70%; /* Set width of number container */
+    margin: 1rem auto; /* Add margin to number container */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Styling for number items */
+  .num-item {
+    font-size: 1.5rem; /* Set font size for number items */
+    line-height: 1.4rem; /* Set line height for number items */
+    color: rgb(43, 126, 199); /* Set text color for number items */
+  }
+  
+  /* Styling for goal section */
+  #goal {
+    width: 80%; /* Set width of goal section */
+    margin: 2rem auto; /* Add margin to goal section */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  /* Styling for left part of goal section */
+  .goal-left {
+    width: 60%; /* Set width of goal left section */
+    line-height: 2rem; /* Set line height for goal left section */
+  }
+  
+  /* Styling for paragraphs in goal left section */
+  .goal-left p {
+    line-height: 1.5rem; /* Set line height for paragraphs */
+    margin: 1rem 0; /* Add margin to paragraphs */
+  }
+  
+  /* Styling for unordered list in goal left section */
+  .goal-left ul {
+    list-style: none; /* Remove default list style */
+    margin-bottom: 1rem; /* Add margin below unordered list */
+  }
+  
+  /* Styling for list items in goal left section */
+  .goal-left ul li::before {
+    line-height: 1.5rem; /* Set line height for list item */
+    content: "✓"; /* Add checkmark bullet */
+    color: red; /* Set color for checkmark bullet */
+  }
+  
+  /* Styling for right part of goal section */
+  .goal-right {
+    position: relative; /* Set position relative for absolute positioning of elements */
+    width: 35%; /* Set width of goal right section */
+  }
+  
+  /* Styling for images in goal right section */
+  .goal-right img {
+    width: 100%; /* Set width of images */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    border-radius: 10px; /* Add border radius to images */
+    filter: drop-shadow(3px 4px 5px black); /* Add drop shadow effect */
+    transition: all 0.2s linear; /* Add transition effect for smooth hover */
+  }
+  
+  /* Styling for hover effect on images in goal right section */
+  .goal-right img:hover {
+    transform: translateY(-5px); /* Move image upward on hover */
+    filter: drop-shadow(
+      5px 6px 7px black
+    ); /* Add stronger drop shadow on hover */
+  }
+  
+  /* Styling for our team section */
+  #our-Team {
+    margin: 4rem auto 1rem; /* Add margin to our team section */
+  }
+  
+  /* Styling for team container */
+  .teamContainer {
+    width: 80%; /* Set width of team container */
+    margin: 0 auto; /* Center team container */
+    display: flex;
+    flex-wrap: wrap; /* Wrap team items */
+    justify-content: space-between; /* Space items evenly */
+  }
+  
+  /* Styling for team items */
+  .team-item {
+    display: flex; /* Display items as flex */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin: 0.5rem; /* Add margin around team items */
+  }
+  
+  /* Styling for headings in team items */
+  .team-item h5 {
+    margin-top: 1rem; /* Add margin above heading */
+    font-size: 1.1rem; /* Set font size for heading */
+  }
+  
+  /* Styling for spans in team items */
+  .team-item span {
+    margin-top: 0.4rem; /* Add margin above span */
+    text-transform: uppercase; /* Transform text to uppercase */
+    color: rgb(7, 176, 176); /* Set text color for span */
+  }
+  
+  /* Styling for images in team items */
+  .team-item img {
+    width: 80px; /* Set width of images */
+  }
+  
+  /* Media queries for responsiveness */
+  @media screen and (max-width: 784px) {
+    /* Adjustments for smaller screens */
+    .goal-right {
+      width: 100%; /* Set width to 100% for smaller screens */
+      margin: 0 auto 2rem; /* Add margin for spacing */
+    }
+  
+    .goal-left {
+      width: 100%; /* Set width to 100% for smaller screens */
+      text-align: center; /* Align text to center */
+    }
+  
+    #goal {
+      flex-direction: column-reverse; /* Reverse flex direction for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 633px) {
+    /* Adjustments for even smaller screens */
+    #home {
+      flex-direction: column; /* Set flex direction to column for smaller screens */
+    }
+  
+    .home-left {
+      width: 100%; /* Set width to 100% for smaller screens */
+      height: auto; /* Set height to auto for responsive height */
+    }
+  
+    .home-left img {
+      width: 100%; /* Set width to 100% for smaller screens */
+    }
+  
+    .home-right {
+      margin-top: 2rem; /* Add margin on top for spacing */
+      width: 100%; /* Set width to 100% for smaller screens */
+    }
+  
+    .para {
+      width: 90%; /* Set width to 90% for smaller screens */
+    }
+  
+    .num-container {
+      flex-direction: column; /* Set flex direction to column for smaller screens */
+    }
+  
+    .num-item {
+      margin: 1rem; /* Add margin around number items */
+    }
+  
+    .teamContainer {
+      justify-content: center; /* Center team items */
+    }
+  }
+  
+  /* Common paragraph styles for home, goal, and other sections */
+  .home-para,
+  .para,
+  .goal-left p {
+    margin-bottom: 20px; /* Add space below paragraphs */
+    line-height: 1.5; /* Increase line height for better readability */
+    text-indent: 20px; /* Add text indentation */
+  }

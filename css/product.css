@@ -1,0 +1,230 @@
+
+h1{
+  text-align: center;
+  color: indianred;
+  margin:20px;
+}
+.category:hover,h1:hover,h2:hover { 
+  color: var(--salmon-pink); /* Change text color to salmon pink on hover */
+}
+
+/* Styling for the container of products */
+#products-container {
+  display: flex; /* Use flexbox to align products */
+  justify-content: center; /* Center products horizontally */
+  align-items: center; /* Center products vertically */
+  margin: 0; /* Remove default margin */
+}
+
+/* Styling for the outer layer of each category */
+.outer-layer {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 15px; /* Add padding */
+  border: 1px solid var(--cultured); /* Add border with a color from custom properties */
+  border-radius: var(--border-radius-md); /* Add border radius from custom properties */
+  margin-bottom: 20px; /* Add bottom margin for spacing */
+  margin-right: 20px; /* Add right margin for spacing */
+}
+
+/* Styling for the container of categories */
+.categories {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center categories horizontally */
+  align-items: center; /* Center categories vertically */
+  flex-wrap: wrap; /* Allow categories to wrap */
+  /* Add some spacing between categories */
+}
+
+/* Styling for each category */
+.category {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center text */
+}
+
+/* Styling for the images inside each category */
+.category img {
+  height: 300px; /* Set height of images */
+  width: 300px; /* Set width of images */
+  margin-bottom: 10px; /* Add bottom margin for spacing */
+  margin-top: 20px; /* Add top margin for spacing */
+}
+
+
+/* Styling for the title of each category */
+.category h2,h2 {
+  font-size: 20px; /* Set font size */
+  color: var(--category-title-color); /* Set text color from custom properties */
+  margin:30px;
+}
+
+/* Styling for the hover state of the title of each category */
+.category h2:hover { 
+  color: var(--salmon-pink); /* Change text color to salmon pink on hover */
+}
+/* PRODUCT GRID */
+.product-main { 
+  margin-bottom: 30px; 
+  margin-left: 50px;
+}
+.product-grid {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding: 0 50px;
+}
+
+.product-grid .showcase {
+  flex: 0 0 calc(25% - 25px);
+}
+
+body {
+  margin: 0;
+}
+/* PRODUCT GRID */
+.product-main { 
+  margin-bottom: 30px; 
+  margin-left: 50px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Change grid to 4 columns */
+  gap: 25px;
+  padding: 0 50px; /* Add padding to the sides */
+}
+
+.product-grid .showcase {
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  transition: var(--transition-timing);
+}
+
+.product-grid .showcase:hover { box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1); }
+
+.product-grid .showcase-banner { position: relative; }
+
+.product-grid .product-img {
+  width: 100%; /* Change image width to 100% */
+  height: 300px;
+  object-fit: cover;
+  transition: var(--transition-timing);
+}
+
+.product-grid .product-img.default {
+  position: relative;
+  z-index: 1;
+}
+
+.product-grid .product-img.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+.product-grid .showcase:hover .product-img.hover { opacity: 1; }
+
+.product-grid .showcase:hover .product-img.default { opacity: 0; }
+
+.product-grid .showcase:hover .product-img { transform: scale(1.1); }
+
+.product-grid .showcase-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--ocean-green);
+  font-size: var(--fs-8);
+  font-weight: var(--weight-500);
+  color: var(--white);
+  padding: 0 8px;
+  border-radius: var(--border-radius-sm);
+  z-index: 3;
+}
+
+.product-grid .showcase-badge.angle {
+  top: 8px;
+  left: -29px;
+  transform: rotate(-45deg);
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 5px 40px;
+}
+
+.product-grid .showcase-badge.black { background: var(--eerie-black); }
+
+.product-grid .showcase-badge.pink { background: var(--salmon-pink); }
+
+.product-grid .showcase-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  transform: translateX(50px);
+  transition: var(--transition-timing);
+  z-index: 3;
+}
+
+.product-grid .showcase:hover .showcase-actions { transform: translateX(0); }
+
+.product-grid .btn-action {
+  background: var(--white);
+  color: var(--sonic-silver);
+  margin-bottom: 5px;
+  border: 1px solid var(--cultured);
+  padding: 5px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-timing);
+}
+
+.product-grid .btn-action:hover {
+  background: var(--eerie-black);
+  color: var(--white);
+  border-color: var(--eerie-black);
+}
+
+.product-grid .showcase-content { padding: 15px 20px 0; }
+
+.product-grid .showcase-category {
+  color: var(--salmon-pink);
+  font-size: var(--fs-9);
+  font-weight: var(--weight-500);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.product-grid .showcase-title {
+  color: var(--sonic-silver);
+  font-size: var(--fs-8);
+  font-weight: var(--weight-300);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  transition: var(--transition-timing);
+}
+
+.product-grid .showcase-title:hover { color: var(--eerie-black); }
+
+.product-grid .showcase-rating {
+  display: flex;
+  color: var(--sandy-brown);
+  margin-bottom: 10px;
+}
+
+.product-grid .price-box {
+  display: flex;
+  gap: 10px;
+  font-size: var(--fs-7);
+  color: var(--eerie-black);
+  margin-bottom: 10px;
+}
+
+.product-grid .price { font-weight: var(--weight-700); }
+
+.product-grid del { color: var(--sonic-silver); }

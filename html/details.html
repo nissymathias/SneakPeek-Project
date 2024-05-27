@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneak Peek</title>
+
+    <!-- Google Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/detail.css">
+
+    <!-- JQuery Link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--Adding favicon-->
+    <link rel="icon" type="image/png" href="../img/logo-png.png">
+</head>
+
+<body>
+    <!-- Loading different pages  -->
+    <script src="../js/productlist.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+            // Function to extract product name from URL and update breadcrumb
+            let urlParams = new URLSearchParams(window.location.search);
+            let productName = urlParams.get('product');
+            function updateBreadcrumb() {
+                // Get the product name from the URL
+
+                // Update the breadcrumb with the product name
+                $('#breadcrump span').text(productName);
+            }
+
+            // Call the function to update breadcrumb when the page loads
+            updateBreadcrumb();
+            // Function to load products when the page loads
+            function loadProducts() {
+                if (typeof products !== 'undefined') {
+                    let product = products.find(p => p.title == productName);
+                    if (product) {
+                        let quantity = product.quantity; // Initial quantity
+                        let productItem = $(`<div class="product-item">
+                            <img src="${product.imageUrl}" alt="${product.title}" class="details-image">
+                            <div class="details-content">
+                                <h1 class="product-header">${product.title}</h1>
+                                <h3 class="description">${product.description}</h3>
+                                <p><strong>Availability:</strong> ${product.availability}</p>
+                                <p><strong>Star Rating:</strong> ${product.star}</p>
+                                <hr>
+                                <h2 class="price">${product.price}</h2>
+                                <p><strong>Quantity:</strong> <span class="quantity">${quantity}</span></p>
+                                <button type="button" id="button-cart"> <ion-icon name="cart-outline"></ion-icon> Add to Cart</button>
+                                <button type="button" id="wish-cart"> <ion-icon name="heart-outline"></ion-icon> Add to Wish List</button>
+                            </div>
+                        </div>`);
+                        $('.products-container').append(productItem);
+
+                        // Add event listener to the Add to Cart button
+                        $('#button-cart').click(function () {
+                            if (quantity > 0) {
+                                quantity--; // Decrease quantity by 1
+                                $('.quantity').text(quantity); // Update quantity on the screen
+                                let cartCount = parseInt($('#cartCount').text());
+                                $('#cartCount').text(cartCount + 1);
+
+                            } else {
+                                alert('Out of stock');
+                            }
+                        });
+                        $('#wish-cart').click(function () {
+                            let wishCount = parseInt($('#wishCount').text());
+                            $('#wishCount').text(wishCount + 1); // Update wish count
+                        });
+                    } else {
+                        $('.products-container').append("<p>Product not found</p>");
+                    }
+                } else {
+                    console.error('Products array not defined');
+                }
+            }
+            loadProducts();
+        });
+    </script>
+
+    <script>
+
+    </script>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+    <div class="product-detail-container">
+        <div class="product-detail">
+            <div id="breadcrump">
+                <ol>
+                    <li><a href="./products.html"><ion-icon name="home-outline"></ion-icon></a></li>
+                    <li><span></span></li>
+                </ol>
+            </div>
+            <div class="products-container"></div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div id="footer"></div>
+</body>
+
+</html>

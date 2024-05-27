@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Logged In</title>
+  </head>
+  <body>
+    <div id="header">
+      <p id="username-placeholder">Welcome, Guest!</p>
+  </div>
+  <div id="content">
+      <h1>Welcome to the Homepage!</h1>
+      <p>This is the main content of your homepage.</p>
+  </div>
+  </body>
+</html>
+
+<script>
+  // Function to fetch the username from a PHP file
+  function getUsername() {
+      fetch('../php/getUsername.php')
+          .then(response => response.text())
+          .then(username => {
+              document.getElementById('username-placeholder').innerText = 'Welcome, ' + username + '!';
+          });
+  }
+
+  // Call the function to fetch the username
+  getUsername();
+</script>

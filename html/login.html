@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+	<script src="../js/jQFormsLogin.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/general.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/media.css" />
+    <link rel="stylesheet" type="text/css" href="../css/jQForms.css">
+	<title>Login Page</title>
+</head>
+<body>
+	<div class="container">
+	<form id="login-form" action="../php/jQFormsLogin.php" method="post" novalidate>
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/><br />
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+		<input type="submit" value="Login">
+		<p>Does not have an account? <a href="./register.html">Register now</a></p>
+	</form>
+</div>
+</body>
+</html>

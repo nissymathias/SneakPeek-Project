@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <link rel="stylesheet" type="text/css" href="../css/general.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/media.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-main">
+        <div class="container">
+          <a href="#" class="header-logo">
+            <img src="../img/logo-png.png" />
+          </a>
+          <div class="header-search-container">
+            <input
+              type="search"
+              name="search"
+              class="search-field"
+              placeholder="Enter the product name"
+            />
+            <button id="searchBtn" class="search-btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+          </div>
+
+          <div class="loggedin-user">
+            <p id="username-placeholder">Welcome, Guest!</p>
+          </div>
+
+          <div class="header-user-actions">
+            <!-- <a href="./html/userupdate.html"> -->
+            <a id="userActionBtn" href="#">
+              <button class="action-btn">
+                <ion-icon name="person-outline"></ion-icon>
+              </button>
+            </a>
+
+            <button class="action-btn">
+              <ion-icon name="heart-outline"></ion-icon>
+              <span id="wishCount" class="count">0</span>
+            </button>
+
+            <button class="action-btn">
+              <ion-icon name="bag-handle-outline"></ion-icon>
+              <span id="cartCount" class="count">0</span>
+            </button>
+
+            <button class="action-btn" id="logoutBtn">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--NAVIGATION FOR MOBILE VIEW-->
+      <div class="mobile-bottom-navigation">
+        
+        <a href="../index.html">
+        <button class="action-btn">
+          <ion-icon name="home-outline"></ion-icon>
+        </button>
+        </a>
+
+        <a href="./products.html">
+        <button class="action-btn" data-mobile-menu-open-btn>
+          <ion-icon name="grid-outline"></ion-icon>
+        </button>
+        </a>
+
+        <button class="action-btn">
+          <ion-icon name="bag-handle-outline"></ion-icon>
+          <span class="count">0</span>
+        </button>
+
+        <button class="action-btn">
+          <ion-icon name="heart-outline"></ion-icon>
+          <span class="count">0</span>
+        </button>
+
+        <a id="userActionMblBtn" href="#">
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+        </a>
+
+        <button class="action-btn" id="logoutMblBtn">
+          <ion-icon name="log-out-outline"></ion-icon>
+        </button>
+
+      </div>
+
+      <!-- NAVIGATION FOR DESKTOP VIEW -->
+      <nav class="desktop-navigation-menu">
+        <div class="container">
+          <ul class="desktop-menu-category-list">
+            <li class="menu-category">
+              <a href="../index.html" class="menu-title">Home</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="./products.html" class="menu-title">Products</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="./otherproducts.html" class="menu-title">Other Products</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="./about.html" class="menu-title">About Us</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="./contact.html" class="menu-title">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Ion Icons  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Script for header part -->
+    <script>
+      $(document).ready(function () {
+        $("#searchBtn").click(function () {
+          let searchInput = $(".search-field").val().toLowerCase();
+          let converseCollection = $("#converse, #converse-1");
+          let nikeCollection = $("#nike, #nike-1");
+          let adidasCollection = $("#adidas, #adidas-1");
+          let sneakerCollection = $("#sneaker, #sneaker-1");
+          // Show the collection based on the search input
+          if (searchInput.includes("converse")) {
+            converseCollection.show();
+            adidasCollection.hide();
+            nikeCollection.hide();
+            sneakerCollection.hide();
+          } else if (searchInput.includes("nike")) {
+            nikeCollection.show();
+            converseCollection.hide();
+            adidasCollection.hide();
+            sneakerCollection.hide();
+          } else if (searchInput.includes("adidas")) {
+            nikeCollection.hide();
+            converseCollection.hide();
+            adidasCollection.show();
+            sneakerCollection.hide();
+          } else if (searchInput.includes("sneaker")) {
+            nikeCollection.hide();
+            converseCollection.hide();
+            adidasCollection.hide();
+            sneakerCollection.show();
+          } else {
+            nikeCollection.show();
+            converseCollection.show();
+            adidasCollection.show();
+            sneakerCollection.show();
+          }
+        });
+
+        $.get("../php/getUsername.php", function (data) {
+          let userInfo = JSON.parse(data);
+          console.log(userInfo);
+          let username = userInfo.username;
+          // Update the placeholder element with the username
+          $("#username-placeholder").text("Welcome, " + username + "!");
+
+          // Call the function to show or hide the logout button
+          updateLogoutButton();
+        });
+
+        // Function to show or hide the logout button based on user login status
+        function updateLogoutButton() {
+          let username = $("#username-placeholder").text();
+          console.log(username);
+          if (username.includes("Guest")) {
+            $("#logoutBtn").hide();
+            $("#logoutMblBtn").hide();
+          } else {
+            $("#logoutBtn").show();
+            $("#logoutMblBtn").show();
+          }
+        }
+
+        //Redirection for login page or user info update page
+        $("#userActionBtn").click(function (e) {
+          e.preventDefault(); // Prevent the default link behavior
+
+          // Check if the user is logged in by checking if the username is set
+          let username = $("#username-placeholder").text();
+          if (username.includes("Guest")) {
+            window.location.href = "./login.html"; // Redirect to userupdate.html if logged in
+          } else {
+            window.location.href = "./userupdate.html"; // Redirect to login.html if not logged in
+          }
+        });
+
+        //Redirection for login page or user info update page for mobile btn
+        $("#userActionMblBtn").click(function (e) {
+          e.preventDefault(); // Prevent the default link behavior
+
+          // Check if the user is logged in by checking if the username is set
+          let username = $("#username-placeholder").text();
+          if (username.includes("Guest")) {
+            window.location.href = "./login.html"; // Redirect to userupdate.html if logged in
+          } else {
+            window.location.href = "./userupdate.html"; // Redirect to login.html if not logged in
+          }
+        });
+        
+        // Handle logout button click
+        $(document).on("click", "#logoutBtn", function (e) {
+          e.preventDefault(); // Prevent the default button behavior
+
+          // Perform logout
+          $.post("../php/logout.php", function () {
+            // Clear the username
+            $("#username-placeholder").text("");
+
+            $("#logoutBtn").hide();
+
+            // Redirect to index.html
+            window.location.href = "../index.html";
+          });
+        });
+
+        // Handle logout button click for mobile btn
+        $(document).on("click", "#logoutMblBtn", function (e) {
+          e.preventDefault(); // Prevent the default button behavior
+
+          // Perform logout
+          $.post("../php/logout.php", function () {
+            // Clear the username
+            $("#username-placeholder").text("");
+
+            $("#logoutMblBtn").hide();
+
+            // Redirect to index.html
+            window.location.href = "../index.html";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
