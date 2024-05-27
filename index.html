@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneak Peek</title>
+
+    <!-- Google Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/general.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./css/media.css" />
+    <link rel="stylesheet" href="./css/product.css" />
+    <!-- JQuery Link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--Adding favicon-->
+    <link rel="icon" type="image/png" href="./img/logo-png.png" />
+  </head>
+  <body>
+    <header>
+      <div class="header-main">
+        <div class="container">
+          <a href="#" class="header-logo">
+            <img src="./img/logo-png.png" />
+          </a>
+          <div class="header-search-container">
+            <input
+              type="search"
+              name="search"
+              class="search-field"
+              placeholder="Enter the product name"
+            />
+            <button id="searchBtn" class="search-btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+          </div>
+
+          <div class="loggedin-user">
+            <p id="username-placeholder">Welcome, Guest!</p>
+          </div>
+
+          <div class="header-user-actions">
+            <!-- <a href="./html/userupdate.html"> -->
+            <a id="userActionBtn" href="#">
+              <button class="action-btn">
+                <ion-icon name="person-outline"></ion-icon>
+              </button>
+            </a>
+
+            <button class="action-btn">
+              <ion-icon name="heart-outline"></ion-icon>
+              <span id="wishCount" class="count">0</span>
+            </button>
+
+            <button class="action-btn">
+              <ion-icon name="bag-handle-outline"></ion-icon>
+              <span id="cartCount" class="count">0</span>
+            </button>
+
+            <button class="action-btn" id="logoutBtn">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--NAVIGATION FOR MOBILE VIEW-->
+      <div class="mobile-bottom-navigation">
+        <a href="./index.html">
+          <button class="action-btn">
+            <ion-icon name="home-outline"></ion-icon>
+          </button>
+        </a>
+
+        <a href="./html/products.html">
+          <button class="action-btn" data-mobile-menu-open-btn>
+            <ion-icon name="grid-outline"></ion-icon>
+          </button>
+        </a>
+
+        <button class="action-btn">
+          <ion-icon name="bag-handle-outline"></ion-icon>
+          <span class="count">0</span>
+        </button>
+
+        <button class="action-btn">
+          <ion-icon name="heart-outline"></ion-icon>
+          <span class="count">0</span>
+        </button>
+
+        <a id="userActionMblBtn" href="#">
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+        </a>
+
+        <button class="action-btn" id="logoutMblBtn">
+          <ion-icon name="log-out-outline"></ion-icon>
+        </button>
+      </div>
+
+      <!-- NAVIGATION FOR DESKTOP VIEW -->
+      <nav class="desktop-navigation-menu">
+        <div class="container">
+          <ul class="desktop-menu-category-list">
+            <li class="menu-category">
+              <a href="./index.html" class="menu-title">Home</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="./html/products.html" class="menu-title">Products</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="./html/otherproducts.html" class="menu-title"
+                >Other Products</a
+              >
+            </li>
+
+            <li class="menu-category">
+              <a href="./html/about.html" class="menu-title">About Us</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="./html/contact.html" class="menu-title">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- BANNER -->
+    <section id="slider">
+      <div class="banner">
+        <div class="container">
+          <div class="slider-container has-scrollbar">
+            <div class="slider-item">
+              <img
+                src="./img/img4.jpg"
+                alt="sneaker latest sale"
+                class="banner-img"
+              />
+
+              <div class="banner-content">
+                <p class="banner-subtitle">Trending item</p>
+
+                <h2 class="banner-title">Latest Shoe Arrival</h2>
+
+                <p class="banner-text">starting at &dollar; <b>100</b>.00</p>
+
+                <a href="#" class="banner-btn">Add to Cart</a>
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <img src="./img/c4.jpg" alt="nike shoes" class="banner-img" />
+
+              <div class="banner-content">
+                <p class="banner-subtitle">Trending One</p>
+
+                <h2 class="banner-title">Nike Shoes</h2>
+
+                <p class="banner-text">starting at &dollar; <b>150</b>.00</p>
+
+                <a href="#" class="banner-btn">Add to Cart</a>
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <img
+                src="./img/c3.jpg"
+                alt="new fashion summer sale"
+                class="banner-img"
+              />
+
+              <div class="banner-content">
+                <p class="banner-subtitle">Sale Offer</p>
+
+                <h2 class="banner-title">New Vans Shoes</h2>
+
+                <p class="banner-text">starting at &dollar; <b>119</b>.99</p>
+
+                <a href="#" class="banner-btn">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section id="featured-product">
+      <!--Categories area-->
+      <div id="products-container"></div>
+      <h1 id="for-cat-text">CHOOSE CATEGORY</h1>
+      <div class="categories">
+        <div class="outer-layer" id="sneaker">
+          <div class="category">
+            <a href="#sneaker-1">
+              <img src="./img/sneakers.jpg" alt="Sneakers" />
+              <h2>SNEAKERS</h2>
+            </a>
+          </div>
+        </div>
+        <div class="outer-layer" id="converse">
+          <div class="category">
+            <a href="#converse-1">
+              <img src="./img/converse.jpg" alt="Converse" />
+              <h2>CONVERSE</h2>
+            </a>
+          </div>
+        </div>
+        <div class="outer-layer" id="nike">
+          <div class="category">
+            <a href="#nike-1">
+              <img src="./img/nike.jpg" alt="Nike" />
+              <h2>NIKE</h2>
+            </a>
+          </div>
+        </div>
+        <div class="outer-layer" id="adidas">
+          <div class="category">
+            <a href="#adidas-1">
+              <img src="./img/adidas.jpg" alt="Adidas" />
+              <h2>ADIDAS</h2>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-nav">
+        <div class="container">
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Popular Categories</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Sport</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Formal</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Boots</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Casual</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Branded</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Products</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Sneakers</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Skechers</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Converse</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Nike</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Adidas</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Our Company</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Delivery</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Gift Cards</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Terms and conditions</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">About us</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Secure payment</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Services</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Prices drop</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">New products</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Best sales</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Contact us</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Sitemap</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Contact</h2>
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <address class="content">
+                123 NorthYorkland, Toronto, Canada
+              </address>
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+
+              <a href="tel:+607936-8058" class="footer-nav-link"
+                >(437) 000-1234</a
+              >
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <a href="mailto:lambton@gmail.com" class="footer-nav-link"
+                >lambton@gmail.com</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Follow Us</h2>
+            </li>
+
+            <li>
+              <ul class="social-link">
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">
+            Copyright &copy; <a href="#">Lambton</a> all rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Ion Icons  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Script for header part -->
+    <script>
+      $(document).ready(function () {
+        $("#searchBtn").click(function () {
+          let searchInput = $(".search-field").val().toLowerCase();
+          let converseCollection = $("#converse, #converse-1");
+          let nikeCollection = $("#nike, #nike-1");
+          let adidasCollection = $("#adidas, #adidas-1");
+          let sneakerCollection = $("#sneaker, #sneaker-1");
+          // Show the collection based on the search input
+          if (searchInput.includes("converse")) {
+            converseCollection.show();
+            adidasCollection.hide();
+            nikeCollection.hide();
+            sneakerCollection.hide();
+          } else if (searchInput.includes("nike")) {
+            nikeCollection.show();
+            converseCollection.hide();
+            adidasCollection.hide();
+            sneakerCollection.hide();
+          } else if (searchInput.includes("adidas")) {
+            nikeCollection.hide();
+            converseCollection.hide();
+            adidasCollection.show();
+            sneakerCollection.hide();
+          } else if (searchInput.includes("sneaker")) {
+            nikeCollection.hide();
+            converseCollection.hide();
+            adidasCollection.hide();
+            sneakerCollection.show();
+          } else {
+            nikeCollection.show();
+            converseCollection.show();
+            adidasCollection.show();
+            sneakerCollection.show();
+          }
+        });
+
+        $.get("./php/getUsername.php", function (data) {
+          let userInfo = JSON.parse(data);
+          let username = userInfo.username;
+          // Update the placeholder element with the username
+          $("#username-placeholder").text("Welcome, " + username + "!");
+
+          // Call the function to show or hide the logout button
+          updateLogoutButton();
+        });
+
+        // Function to show or hide the logout button based on user login status
+        function updateLogoutButton() {
+          let username = $("#username-placeholder").text();
+          console.log(username);
+          if (username.includes("Guest")) {
+            $("#logoutBtn").hide();
+            $("#logoutMblBtn").hide();
+          } else {
+            $("#logoutBtn").show();
+            $("#logoutMblBtn").show();
+          }
+        }
+
+        //Redirection for login page or user info update page
+        $("#userActionBtn").click(function (e) {
+          e.preventDefault(); // Prevent the default link behavior
+
+          // Check if the user is logged in by checking if the username is set
+          let username = $("#username-placeholder").text();
+          if (username.includes("Guest")) {
+            window.location.href = "./html/login.html"; // Redirect to userupdate.html if logged in
+          } else {
+            window.location.href = "./html/userupdate.html"; // Redirect to login.html if not logged in
+          }
+        });
+
+        //Redirection for login page or user info update page for mobile btn
+        $("#userActionMblBtn").click(function (e) {
+          e.preventDefault(); // Prevent the default link behavior
+
+          // Check if the user is logged in by checking if the username is set
+          let username = $("#username-placeholder").text();
+          if (username.includes("Guest")) {
+            window.location.href = "./login.html"; // Redirect to userupdate.html if logged in
+          } else {
+            window.location.href = "./userupdate.html"; // Redirect to login.html if not logged in
+          }
+        });
+
+        // Handle logout button click
+        $(document).on("click", "#logoutBtn", function (e) {
+          e.preventDefault(); // Prevent the default button behavior
+
+          // Perform logout
+          $.post("./php/logout.php", function () {
+            // Clear the username
+            $("#username-placeholder").text("");
+
+            $("#logoutBtn").hide();
+
+            // Redirect to index.html
+            window.location.href = "./index.html";
+          });
+        });
+
+        // Handle logout button click for mobile btn
+        $(document).on("click", "#logoutMblBtn", function (e) {
+          e.preventDefault(); // Prevent the default button behavior
+
+          // Perform logout
+          $.post("./php/logout.php", function () {
+            // Clear the username
+            $("#username-placeholder").text("");
+
+            $("#logoutMblBtn").hide();
+
+            // Redirect to index.html
+            window.location.href = "./index.html";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
